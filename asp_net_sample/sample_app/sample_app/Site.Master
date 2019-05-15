@@ -61,7 +61,7 @@
         </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                <asp:DataGrid ID="main_data_grid" runat="server"></asp:DataGrid>
+                <asp:DataGrid ID="main_data_grid" runat="server" ></asp:DataGrid>
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
