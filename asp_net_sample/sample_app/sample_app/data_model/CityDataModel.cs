@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using SimpleDbConnector;
 using System.Collections.Generic;
+using System.Data;
 
 namespace sample_app.data_model
 {
@@ -64,14 +65,20 @@ namespace sample_app.data_model
 
     public class CityDataModel : DataModel
     {
-        CityDataModel(String connection_string, String provider_name, int pool_size) 
-            : 
+        public CityDataModel(String connection_string, String provider_name, int pool_size)
+            :
             base(connection_string, provider_name, pool_size)
         { }
 
         public List<City> getCitiesList()
         {
             throw new NotImplementedException("WIP");
+        }
+
+        public DataTable getCitiesListTable()
+        {
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            return ExecProc("f_cities_list", parameters);
         }
     }
 }
